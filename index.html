@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexIphones</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=GBP"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <span>
+          <a href="#" class="logo">
+              <i class="fas fa-mobile-alt"></i>
+              ApexPhone
+          </a>
+        </span>
+        <div class="mobile-menu-btn">☰</div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#orderhistory">Order history</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+          <li>
+            <div class="cart-icon"><a href="#cart">Cart</a>
+              🛒 <span class="cart-count" id="cart-counter">0</span>
+            </div>          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- <h1>Welcome to Food Delivery</h1> -->
+  <p id="userInfo"></p>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Experience Premium iPhones at ApexPhone</h1>
+        <!-- <h2>Delicious Food Delivered</h2> -->
+        <p>Discover the latest iPhone models with exceptional deals and guaranteed UK delivery. Your trusted iPhone specialist since 2018.</p>
+        <button class="cta-button">Shop Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <div id="menu" class="container">
+      <h2 class="section-title">Featured iPhones</h2>
+      
+      <div class="category-filter">
+        <button class="category-button active">All</button>
+        <button class="category-button">iPhones 16</button>
+        <button class="category-button">iPhones 15</button>
+        <button class="category-button">iPhones 14</button>
+        <button class="category-button">iPhones 13</button>
+        <button class="category-button">iPhones 12</button>
+        <button class="category-button">iPhones 11</button>
+      </div>
+      
+      <div class="menu-grid">
+        <!-- Menu Item 1 -->
+        <div class="menu-item">
+          <img src="/assets/images/15PrMax.jpg" alt="Iphone 15 Pro Max">
+          <div class="menu-item-info">
+            <h3 class="menu-item-title">iPhone 15 Pro Max</h3>
+            <p class="menu-item-desc">Featuring A17 Pro chip, Dynamic Island, and a titanium design with a stunning Super Retina XDR display.</p>
+            <div class="menu-item-footer">
+              <span class="menu-item-price">£899.99</span>
+              <span class="stock-status in-stock">In Stock</span>
+              <button class="add-to-cart-btn" data-product-id="i15PrMx">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 2 -->
+        <div class="menu-item">
+          <img src="/assets/images/15Pr.jpeg" alt="iPhone 15 Pro">
+          <div class="menu-item-info">
+            <h3 class="menu-item-title">iPhone 15 Pro</h3>
+            <p class="menu-item-desc">Powered by A16 Bionic chip with an impressive camera system and all-day battery life.</p>
+            <div class="menu-item-footer">
+              <span class="menu-item-price">£799.99</span>
+              <span class="stock-status in-stock">In Stock</span>
+              <button class="add-to-cart-btn" data-product-id="chickenBurger">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 3 -->
+        <div class="menu-item">
+          <img src="/assets/images/i14PrMx.jpg" alt="iPhone">
+          <div class="menu-item-info">
+            <h3 class="menu-item-title">iPhone 14 Pro Max</h3>
+            <p class="menu-item-desc">Large 6.7-inch display with ProMotion technology, A16 Bionic, and pro-level camera system.</p>
+            <div class="menu-item-footer">
+              <span class="menu-item-price">£699.99</span>
+              <span class="stock-status out-stock">Out of Stock</span>
+              <button class="add-to-cart-btn" data-product-id="caesarSalad">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 4 -->
+        <div class="menu-item">
+          <img src="/assets/images/i16.jpeg" alt="iPhone 16">
+          <div class="menu-item-info">
+            <h3 class="menu-item-title">iPhone 16</h3>
+            <p class="menu-item-desc">Compact powerhouse with A15 Bionic chip, Touch ID, and exceptional value for money.</p>
+            <div class="menu-item-footer">
+              <span class="menu-item-price">£999.99</span>
+              <span class="stock-status in-stock">In Stock</span>
+              <button class="add-to-cart-btn" data-product-id="pastaCarbonara">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cart Preview -->
+  <section id="cart" class="container">
+    <div id="cart" class="cart-preview">
+      <h2 class="cart-title">Your Cart</h2>
+      <div class="cart-items"></div>
+      <div class="cart-summary"></div>
+    </div>
+  </section>
+  
+  <!-- Order Tracking -->
+  <section class="tracking-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Track Your Order</h2>
+                    <p>Check the status and details of your iPhone order</p>
+                </div>
+                
+                <div class="tracking-card">
+                    <div class="order-header">
+                        <div>
+                            <h3>Order #APX78542</h3>
+                            <p>Placed on May 1, 2025</p>
+                        </div>
+                        <div class="order-status status-success">
+                            Order Confirmed
+                        </div>
+                    </div>
+                    
+                    <div class="tracking-steps">
+                        <div class="step-list">
+                            <div class="step completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="step-label">Order Placed</div>
+                            </div>
+                            
+                            <div class="step completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="step-label">Payment Confirmed</div>
+                            </div>
+                            
+                            <div class="step active">
+                                <div class="step-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="step-label">Processing</div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="step-label">Shipping</div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="step-label">Delivered</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Your order is being processed and will ship within 24 hours, with tracking details sent via email upon dispatch.</p>
+                    
+                    <div class="delivery-info">
+                        <h3 class="delivery-header">Delivery Information</h3>
+                        <div class="delivery-details">
+                            <div class="delivery-item">
+                                <h4>Delivery Method</h4>
+                                <p>DPD Next Day Delivery</p>
+                            </div>
+                            
+                            <div class="delivery-item">
+                                <h4>Estimated Delivery</h4>
+                                <p id="datetime"></p>
+                            </div>
+                            
+                            <div class="delivery-item">
+                                <h4>Delivery Address</h4>
+                                <p>123 Oxford Street, London, W1D 1AB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Order history -->
+  <section class="order-history-section">
+  <div class="order-container">
+    <div class="order-section-header">
+      <h2>Order History</h2>
+      <p>View and manage all your previous orders</p>
+    </div>
+
+    <div class="order-history-container">
+      <!-- Optional: Filter and Search Controls -->
+      <div class="order-controls">
+        <div class="order-filter">
+          <select>
+            <option>All Orders</option>
+            <option>Last 30 Days</option>
+            <option>Last 3 Months</option>
+            <option>Last Year</option>
+          </select>
+        </div>
+        <div class="order-search">
+          <input type="text" placeholder="Search orders...">
+        </div>
+      </div>
+
+      <!-- Your existing order history content goes here -->
+      <div class="order-history" id="orderHistory">
+        <!-- <div class="order-history" id="orderHistory"> -->
+          <h3>Past Orders</h3>
+          <p>Here you can view your past orders and their details.</p>
+          <div class="order-list">
+              <div class="order-item">
+                  <h4>Order #1234</h4>
+                  <p>iPhone 15 Pro Max - £899.99</p>
+                  <p>Status: Delivered</p>
+              </div>
+              <div class="order-item">
+                  <h4>Order #1235</h4>
+                  <p>iPhone 15 Pro - £799.99</p>
+                  <p>Status: In Transit</p>
+              </div>
+          </div>
+        <!-- Your existing code -->
+      </div>
+
+      <!-- Optional: Pagination -->
+      <div class="order-pagination">
+        <div class="page-item disabled"><a class="page-link" href="#">«</a></div>
+        <div class="page-item active"><a class="page-link" href="#">1</a></div>
+        <div class="page-item"><a class="page-link" href="#">2</a></div>
+        <div class="page-item"><a class="page-link" href="#">3</a></div>
+        <div class="page-item"><a class="page-link" href="#">»</a></div>
+      </div>
+
+      <!-- Optional: Empty state (show when no orders) -->
+      <!-- 
+      <div class="order-empty-state">
+        <i class="fas fa-shopping-bag"></i>
+        <h3>No Orders Yet</h3>
+        <p>You haven't placed any orders with us yet.</p>
+        <a href="#" class="btn">Start Shopping</a>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+  
+<!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                            ApexPhone
+                        </div>
+                        <p>ApexPhone offers genuine iPhones with top-notch service and reliable UK delivery.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#menu">Products</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#trackOrder">Track Order</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="contact" class="footer-contact">
+                        <h3 class="footer-links">Contact Us</h3><br>
+                        <p><i class="fas fa-map-marker-alt"></i> 127 Oxford Street, London, UK</p>
+                        <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> support@apexphone.co.uk</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 ApexPhone. All rights reserved. | London, UK.</p>
+                </div>
+            </div>
+        </footer>
+
+  <a href="#" class="back-to-top" id="back-to-top">↑</a>
+  
+  <script src="script.js"></script>
+</body>
+</html>
