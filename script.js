@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Products data
     const products = {
-        "i15PrMx": { name: "iPhone 15 Pro Max", price: 899.99, image: "/assets/images/15PrMax.jpg", description: "Featuring A17 Pro chip, Dynamic Island" },
-        "chickenBurger": { name: "iPhone 15 Pro", price: 799.99, image: "/assets/images/15Pr.jpeg", description: "Powered by A16 Bionic chip" },
-        "caesarSalad": { name: "iPhone 14 Pro Max", price: 699.99, image: "/assets/images/i14PrMx.jpg", description: "Large 6.7-inch display with ProMotion" },
-        "pastaCarbonara": { name: "iPhone 16", price: 999.99, image: "/assets/images/i16.jpeg", description: "Compact powerhouse with A15 Bionic chip" },
+        "i15PrMx": { name: "iPhone 15 Pro Max", price: 899.99, image: "15PrMax.jpg", description: "Featuring A17 Pro chip, Dynamic Island" },
+        "chickenBurger": { name: "iPhone 15 Pro", price: 799.99, image: "15Pr.jpeg", description: "Powered by A16 Bionic chip" },
+        "caesarSalad": { name: "iPhone 14 Pro Max", price: 699.99, image: "i14PrMx.jpg", description: "Large 6.7-inch display with ProMotion" },
+        "pastaCarbonara": { name: "iPhone 16", price: 999.99, image: "i16.jpeg", description: "Compact powerhouse with A15 Bionic chip" },
     };
 
     // Add product to cart
